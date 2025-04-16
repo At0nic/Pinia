@@ -1,71 +1,27 @@
 <template>
-  <div id="app">
-    <router-view />
-  </div>
-</template>
+  <v-app>
+    <v-app-bar app color="indigo darken-4" dark flat>
+      <v-container class="d-flex align-center justify-space-between">
+        <v-toolbar-title class="text-h5">🧠 KvízApp</v-toolbar-title>
+        <div>
+          <v-btn to="/" variant="text" class="mx-2" color="white">Domů</v-btn>
+          <v-btn to="/result" variant="text" class="mx-2" color="white">Výsledky</v-btn>
+        </div>
+      </v-container>
+    </v-app-bar>
 
-<script setup>
-// nic nepotřebuješ importovat, `router-view` se postará o vykreslení aktuální stránky
-</script>
+    <v-main>
+      <v-container class="py-10">
+        <router-view />
+      </v-container>
+    </v-main>
+  </v-app>
+</template>
 
 <style>
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  background-color: #f4f6fa;
   margin: 0;
-  padding: 0;
-  background-color: #f9f9f9;
-  color: #333;
-}
-
-#app {
-  max-width: 800px;
-  margin: auto;
-  padding: 2rem;
-}
-
-h1, h2 {
-  text-align: center;
-  color: #2c3e50;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-button, a {
-  background-color: #3498db;
-  color: white;
-  padding: 0.8rem 1.2rem;
-  text-decoration: none;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover, a:hover {
-  background-color: #2980b9;
-}
-
-.router-link-active {
-  font-weight: bold;
-}
-
-@media (max-width: 600px) {
-  #app {
-    padding: 1rem;
-  }
-
-  button, a {
-    width: 100%;
-    display: block;
-  }
 }
 </style>
-
